@@ -36,6 +36,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("ToDo List"),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -116,7 +119,12 @@ class _HomeState extends State<Home> {
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: lst.length,
                 itemBuilder: (context, index) {
-                  return Text(lst[index]);
+                  return ListTile(
+                    leading: Icon(Icons.circle),
+                    trailing: Text("GoodLuck",
+                           style: TextStyle(
+                             color: Colors.green,fontSize: 15),),
+                    title: Text(lst[index]));
                 })
           ],
         ),
