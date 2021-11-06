@@ -47,12 +47,12 @@ class _HomeState extends State<Home> {
             ),
             Center(
               child: Container(
-                width: 500,
+                width: MediaQuery.of(context).size.width * 0.7,
                 child: TextField(
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(), hintText: "Enter Value"),
                   style: TextStyle(
-                      fontSize: 40.0, height: 2.0, color: Colors.black),
+                      fontSize: 30.0, height: 1.8, color: Colors.black),
                   controller: txt,
                   onChanged: (value) {
                     gettext = value;
@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
             ),
             Center(
               child: Container(
-                width: 500,
+                width: MediaQuery.of(context).size.width * 0.7,
                 child: Row(
                   children: [
                     Expanded(
@@ -120,11 +120,12 @@ class _HomeState extends State<Home> {
                 itemCount: lst.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    leading: Icon(Icons.circle),
-                    trailing: Text("GoodLuck",
-                           style: TextStyle(
-                             color: Colors.green,fontSize: 15),),
-                    title: Text(lst[index]));
+                      leading: Icon(Icons.circle),
+                      trailing: Text(
+                        "GoodLuck",
+                        style: TextStyle(color: Colors.green, fontSize: 15),
+                      ),
+                      title: Text(lst[index]));
                 })
           ],
         ),
